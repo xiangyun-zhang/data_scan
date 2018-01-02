@@ -1,5 +1,20 @@
 {template common/header}
 
-Hello World!
+<!--{loop $contents $key $value}-->
+    <h1>$SUBJECT[$key]</h>
+        <table border="1px">
+            <!--{loop $value $k $v}-->
+            <tr>
+                <th>$k</th>
+                <td>
+                <!--{loop $v $string}-->
+                $string<br />
+                <!--{/loop}-->
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </table>
+        <br />
+<!--{/loop}-->
 
 {template common/footer}
