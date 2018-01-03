@@ -1,20 +1,39 @@
 {template common/header}
 
+<form class="searchResult" action="/plugin.php?id=data_scan" method="get">
+<input type="hidden" name="id" value="data_scan">
+<span>学科:</span>
+<select name="subjectName">
+    <option value="0">全部</option>
+    <!--{loop $SUBJECT $key $value}-->
+
+    <!--{if $key==$subjectName}-->
+    <option value="{$key}" selected>$value</option>
+    <!--{else}-->
+    <option value="{$key}">$value</option>
+    <!--{/if}-->
+
+    <!--{/loop}-->
+</select>
+<span>学校名搜索：</span>
+<input type="text" name="name" value="{$name}" placeholder="可不填">
+<input type="submit" value="确认">
+</form>
 <!--{loop $contents $key $value}-->
-    <h1>$SUBJECT[$key]</h>
-        <table border="1px">
-            <!--{loop $value $k $v}-->
-            <tr>
-                <th>$k</th>
-                <td>
-                <!--{loop $v $string}-->
-                $string<br />
-                <!--{/loop}-->
-                </td>
-            </tr>
-            <!--{/loop}-->
-        </table>
-        <br />
+<h1 class="subjectName">$SUBJECT[$key]</h>
+<table class="result" border="1px">
+    <!--{loop $value $k $v}-->
+    <tr>
+        <th>$k</th>
+        <td>
+        <!--{loop $v $string}-->
+        $string<br />
+        <!--{/loop}-->
+        </td>
+    </tr>
+    <!--{/loop}-->
+</table>
+<br />
 <!--{/loop}-->
 
 {template common/footer}
