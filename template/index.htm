@@ -19,21 +19,28 @@
 <input type="text" name="name" value="{$name}" placeholder="可不填">
 <input type="submit" value="确认">
 </form>
+
 <!--{loop $contents $key $value}-->
-<h1 class="subjectName">$SUBJECT[$key]</h>
 <table class="result" border="1px">
+    <tr>
+        <th rowspan="10" class="subjectName">$SUBJECT[$key]</th>
+    </tr>
     <!--{loop $value $k $v}-->
     <tr>
-        <th>$k</th>
+
+        <td class="levelName">$k</td>
         <td>
         <!--{loop $v $string}-->
         $string<br />
         <!--{/loop}-->
         </td>
+
     </tr>
     <!--{/loop}-->
 </table>
-<br />
 <!--{/loop}-->
+
+<br />
+
 
 {template common/footer}
