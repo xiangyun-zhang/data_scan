@@ -3,3 +3,9 @@ table {font-size: 15px;}
 .result {margin-top: 20px;}
 .result td{padding: 10px; margin: 10px}
 .levelName {text-align: center}
+.container {width:200px;margin: 100px auto;}
+.container span{font-size: 20px;}
+.container #schoolName{display: block; font-size: 15px; height: 30px; width: auto;margin: 10px auto; text-align: center;}
+.container #cBut{display: block; font-size: 20px; width: 100px; margin: 10px auto;}
+.container p{font-size: 15px; margin-top: 15px}
+.backIndex {margin: 20px auto;}

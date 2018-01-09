@@ -1,47 +1,38 @@
 {template common/header}
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 
-<form class="searchResult" action="/plugin.php?id=data_scan" method="get">
-<input type="hidden" name="id" value="data_scan">
-<span>学科:</span>
-<select name="subjectName">
-    <option value="0">全部</option>
-    <!--{loop $SUBJECT $key $value}-->
+<div class="container">
 
-    <!--{if $key==$subjectName}-->
-    <option value="{$key}" selected>$value</option>
+
+    <!--{if empty($contents)}-->
+
+    <form class="searchResult" action="/plugin.php?id=data_scan" method="get">
+    <input type="hidden" name="id" value="data_scan">
+    <span>输入你的学校名：</span>
+    <input id="schoolName" type="text" name="name" value="{$name}">
+    <input id="cBut" type="submit" value="确认">
+    </form>
+
     <!--{else}-->
-    <option value="{$key}">$value</option>
-    <!--{/if}-->
 
-    <!--{/loop}-->
-</select>
-<span>学校名搜索：</span>
-<input type="text" name="name" value="{$name}" placeholder="可不填">
-<input type="submit" value="确认">
-</form>
+    <span>{$name}</span>
+    <p>学科综合评分： {$schoolScores[$name]}</p>
+    <p>超越了 {$sort} 的大学！</p>
 
-<!--{loop $contents $key $value}-->
-<table class="result" border="1px">
-    <tr>
-        <!--{eval $count = count($value)+1;}-->
-        <th rowspan="{$count}" class="subjectName">$SUBJECT[$key]</th>
-    </tr>
-    <!--{loop $value $k $v}-->
-    <tr>
-
-        <td class="levelName">$k</td>
-        <td>
-        <!--{loop $v $string}-->
-        $string<br />
+    <table class="result" border="1px">
+        <!--{loop $contents $key $value}-->
+        <tr>
+            <td>{$SUBJECT[$key]}</td>
+            <td>{$value}</td>
+        </tr>
         <!--{/loop}-->
-        </td>
+    </table>
 
-    </tr>
-    <!--{/loop}-->
-</table>
-<!--{/loop}-->
+    <div class="backIndex">
+        <a href="/plugin.php?id=data_scan">首页二维码</a>
+    </div>
 
-<br />
-
+    <!--{/if}-->
+</div>
 
 {template common/footer}
