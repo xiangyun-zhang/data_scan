@@ -24,3 +24,19 @@ function getContents($fileName){
 
     return $contents;
 }
+
+function getScore(){
+    foreach (SUBJECT as $k => $v) {
+		$contents[$k] = getContents($k);
+	}
+    foreach ($contents as $subId => $subInfo) {
+        foreach ($subInfo as $level => $schools) {
+            foreach ($schools as $key => $school) {
+                $schoolScores[$school] = $schoolScores[$school] + SCORE[$level];
+            }
+        }
+    }
+    arsort($schoolScores);
+
+    return $schoolScores;
+}
