@@ -1,12 +1,14 @@
-<?php
+ <?php
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 include "const.php";
 include "fun.inc.php";
-// var_dump(LEVEL);
+
 extract($_GET);
 $name = trim($name);
+$schoolScores = getScore();
+
 $contents = [];
 if ($subjectName) {
 	$contents[$subjectName] = getContents($subjectName);
@@ -20,8 +22,7 @@ if ($name) {
 	foreach ($contents as $subjectId => $v) {
 		foreach ($v as $levelId => $value) {
 			foreach ($value as $schoolInfo) {
-				if (strpos($schoolInfo, $name)) {
-					// var_dump($schoolInfo);
+				if ($schoolInfo == $name) {
 					$tmp[$subjectId][$levelId] = [$schoolInfo];
 					break;
 				}
@@ -29,12 +30,8 @@ if ($name) {
 
 		}
 	}
-// var_dump($tmp);
-echo "************\n";
-	$contents = $tmp;
-	// var_dump($contents);
-}
 
-// var_dump($contents);
+	$contents = $tmp;
+}
 
 include template('data_scan:index');

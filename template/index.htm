@@ -23,7 +23,8 @@
 <!--{loop $contents $key $value}-->
 <table class="result" border="1px">
     <tr>
-        <th rowspan="10" class="subjectName">$SUBJECT[$key]</th>
+        <!--{eval $count = count($value)+1;}-->
+        <th rowspan="{$count}" class="subjectName">$SUBJECT[$key]</th>
     </tr>
     <!--{loop $value $k $v}-->
     <tr>
