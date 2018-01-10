@@ -9,3 +9,4 @@ table {font-size: 15px;}
 .container #cBut{display: block; font-size: 20px; width: 100px; margin: 10px auto;}
 .container p{font-size: 15px; margin-top: 15px}
 .backIndex {margin: 20px auto;}
+.container .sort {font-size: 30px;color: red;}

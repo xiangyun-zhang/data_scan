@@ -1,5 +1,8 @@
 <?php
-define("PHILOSOPHY", '0101');
+// 微信相关设置
+define("APPID" , "wxa14a54fa55047558");
+define("APP_SECRET", "7e79e3abbe9ed13c33a3a130a2ddee0c");
+define("TOKEN", "XL0RD85");
 
 $SUBJECT = [
     '0101'  =>  '哲学',
