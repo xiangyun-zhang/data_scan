@@ -2,16 +2,15 @@
 
 <div class="main">
   <div class="container">
-      <div class="col-xs-10 col-xs-offset-3 contain">
+      <div class="col-xs-12 col-xs-offset-2 contain">
           <!--{if empty($contents)}-->
-
-          <form class="searchResult" action="/plugin.php?id=data_scan" method="get">
-          <input type="hidden" name="id" value="data_scan">
-          <span>输入你的学校名：</span>
-          <input id="schoolName" type="text" name="name" value="{$name}">
-          <input id="cBut" type="submit" value="确认">
-          </form>
-
+          <div class="schoolSearch">
+              <form class="searchResult center-block" action="/plugin.php?id=data_scan" method="get">
+              <input type="hidden" name="id" value="data_scan">
+              <input id="schoolName" type="text" name="name" value="{$name}" placeholder="输入你的学校名">
+              <input id="cBut" class="btn btn-default" type="submit" value="确认">
+              </form>
+          </div>
           <!--{else}-->
 
           <span>{$name}</span>
