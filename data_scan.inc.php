@@ -10,11 +10,7 @@ $name = trim($name);
 
 $contents = [];
 
-
-
-
 if ($name) {
-
 
     foreach ($SUBJECT as $k => $v) {
         $contents[$k] = getContents($k);

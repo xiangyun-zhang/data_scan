@@ -1,0 +1,40 @@
+{template data_scan:header}
+
+<div class="main">
+  <div class="container">
+      <div class="col-xs-10 col-xs-offset-3 contain">
+          <!--{if empty($contents)}-->
+
+          <form class="searchResult" action="/plugin.php?id=data_scan" method="get">
+          <input type="hidden" name="id" value="data_scan">
+          <span>输入你的学校名：</span>
+          <input id="schoolName" type="text" name="name" value="{$name}">
+          <input id="cBut" type="submit" value="确认">
+          </form>
+
+          <!--{else}-->
+
+          <span>{$name}</span>
+          <p>学科综合评分： {$schoolScores[$name]}</p>
+          <p>超越了 {$sort} 的大学！</p>
+
+          <table class="result" border="1px">
+              <!--{loop $contents $key $value}-->
+              <tr>
+                  <td>{$SUBJECT[$key]}</td>
+                  <td>{$value}</td>
+              </tr>
+              <!--{/loop}-->
+          </table>
+
+          <div class="backIndex">
+              <a href="/plugin.php?id=data_scan">首页二维码</a>
+          </div>
+
+          <!--{/if}-->
+      </div>
+  </div>
+</div>
+
+</body>
+</html>
