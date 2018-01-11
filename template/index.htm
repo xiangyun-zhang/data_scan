@@ -1,6 +1,8 @@
 {template common/header}
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="source/plugin/data_scan/template/jquery.qrcode.min.js"></script>
+<script>var jq = jQuery.noConflict();</script>
+
 <div class="container">
 
 
@@ -35,10 +37,11 @@
 
     <!--{/if}-->
 </div>
+
 <script>
     var url = window.location.host;
     var protocol = window.location.protocol;
-    $('.backIndex').qrcode({
+    jq('.backIndex').qrcode({
         width: 150,
         height: 150,
         text: protocol + "//" + url + "/plugin.php?id=data_scan"
