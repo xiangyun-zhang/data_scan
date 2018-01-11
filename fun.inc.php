@@ -42,9 +42,9 @@ function getScore(){
 }
 
 function getSort($schoolScores, $schoolName){
-    
+
     $scoreSort = array_keys(array_count_values($schoolScores));
     $schoolSort = array_search($schoolScores[$schoolName], $scoreSort); //学校积分名次
 
-    return round( (1 - $schoolSort/count($scoreSort) )*100,0)."%";
+    return round( (1 - $schoolSort/count($scoreSort) )*100,1)."%";
 }

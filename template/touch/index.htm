@@ -11,6 +11,33 @@
               <input id="cBut" class="btn btn-default" type="submit" value="确认">
               </form>
           </div>
+
+          <h3>高校前五排名：</h3>
+          <table class="topFive" border="1px">
+              {eval $i = 1;}
+              {loop $topFive $sName $sScore}
+              <tr>
+                  <td>
+                      {if $i == 1}
+                      <img src="source/plugin/data_scan/template/img/01.png" style="width:25px; height:25px;">
+                      {elseif $i ==2 }
+                      <img src="source/plugin/data_scan/template/img/02.png" style="width:25px; height:25px;">
+                      {elseif $i ==3 }
+                      <img src="source/plugin/data_scan/template/img/03.png" style="width:25px; height:25px;">
+                      {else}
+                      {$i}
+                      {/if}
+                  </td>
+                  <td>$sName</td>
+                  {eval $i++;}
+              </tr>
+              {/loop}
+              <tr>
+                  <td></td>
+                  <td>...</td>
+              </tr>
+          </table>
+
           <!--{else}-->
 
           <span>{$name}</span>

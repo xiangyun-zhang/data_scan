@@ -9,6 +9,8 @@ extract($_GET);
 $name = trim($name);
 
 $contents = [];
+$schoolScores = getScore();
+$topFive = array_slice($schoolScores, 0, 5);
 
 if ($name) {
 
@@ -34,7 +36,7 @@ if ($name) {
         $contents[$key] = array_search($value, SCORE);
     }
 
-    $schoolScores = getScore();
+
     $sort = getSort($schoolScores, $name);
 
 }
