@@ -13,6 +13,10 @@ $schoolScores = getScore();
 $topFive = array_slice($schoolScores, 0, 10);
 $schoolName = array_keys($schoolScores );
 
+if ($subject) {
+	$contents[$subject] = getContents($subject);
+}
+
 if ($name) {
 
     foreach ($SUBJECT as $k => $v) {

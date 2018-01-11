@@ -43,6 +43,27 @@
               </tr>
           </table>
 
+          <!--{elseif !is_null($subject)}-->
+              <!--{loop $contents $key $value}-->
+              <h3 class="subjectName">$SUBJECT[$key]</h3>
+              <table class="subjectResult" border="1px">
+                  <!--{loop $value $k $v}-->
+                  <tr>
+                      <th>$k</th>
+                      <td>
+                      <!--{loop $v $string}-->
+                      <a href="/plugin.php?id=data_scan&name={$string}">$string</a><br />
+                      <!--{/loop}-->
+                      </td>
+                  </tr>
+                  <!--{/loop}-->
+              </table>
+              <br />
+              <!--{/loop}-->
+
+              <div class="backIndex">
+                  <a href="/plugin.php?id=data_scan"><span>重新查询</span></a>
+              </div>
           <!--{else}-->
 
           <span>{$name}</span>
@@ -52,14 +73,14 @@
           <table class="result" border="1px">
               <!--{loop $contents $key $value}-->
               <tr>
-                  <td>{$SUBJECT[$key]}</td>
+                  <td><a href="/plugin.php?id=data_scan&subject={$key}">{$SUBJECT[$key]}</a></td>
                   <td>{$value}</td>
               </tr>
               <!--{/loop}-->
           </table>
 
           <div class="backIndex">
-              <a href="/plugin.php?id=data_scan"><h3>重新查询</h3></a>
+              <a href="/plugin.php?id=data_scan"><span>重新查询</span></a>
           </div>
 
           <!--{/if}-->
