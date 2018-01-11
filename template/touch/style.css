@@ -6,3 +6,4 @@
 .container #cBut{display: block; font-size: 20px; width: 100px; margin: 10px auto; top: 10px;}
 .container .sort {font-size: 30px;color: red;}
 .topFive {width: 200px; text-align: center; font-size: 25px;margin-top: 15px;}
+.err{color: red;margin-top: 25px;padding: 10px;}

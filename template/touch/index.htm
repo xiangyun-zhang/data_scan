@@ -9,6 +9,12 @@
               <input type="hidden" name="id" value="data_scan">
               <input id="schoolName" type="text" name="name" value="{$name}" placeholder="输入你的学校名">
               <input id="cBut" class="btn btn-default" type="submit" value="确认">
+              <!--{if $empty}-->
+              <div class="err">
+                  <p>找不到您搜索的结果</p>
+                  <p>请输入正确校名</p>
+              </div>
+              <!--{/if}-->
               </form>
           </div>
 
@@ -71,5 +77,17 @@
         text: protocol + "//" + url + "/plugin.php?id=data_scan"
     });
 </script>
+<script>
+ $(function() {
+     var schoolName = [
+       <!--{loop $schoolName $name}-->
+       "{$name}",
+       <!--{/loop}-->
+     ];
+   $( "#schoolName" ).autocomplete({
+     source: schoolName
+   });
+ });
+ </script>
 </body>
 </html>

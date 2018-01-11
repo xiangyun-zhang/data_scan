@@ -11,6 +11,7 @@ $name = trim($name);
 $contents = [];
 $schoolScores = getScore();
 $topFive = array_slice($schoolScores, 0, 5);
+$schoolName = array_keys($schoolScores );
 
 if ($name) {
 
@@ -38,6 +39,9 @@ if ($name) {
 
 
     $sort = getSort($schoolScores, $name);
+    if (is_null($contents)) {
+        $empty = 1;
+    }
 
 }
 

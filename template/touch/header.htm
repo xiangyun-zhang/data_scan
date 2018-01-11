@@ -12,8 +12,24 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <link rel="stylesheet" href="source/plugin/data_scan/template/touch/style.css">
+<link rel="stylesheet" href="source/plugin/data_scan/template/jquery-ui.min.css">
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="source/plugin/data_scan/template/jquery.qrcode.min.js"></script>
+<script src="source/plugin/data_scan/template/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* 防止水平滚动条 */
+    overflow-x: hidden;
+  }
+  /* IE 6 不支持 max-height
+   * 我们使用 height 代替，但是这会强制菜单总是显示为那个高度
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  </style>
 </head>
 <body>

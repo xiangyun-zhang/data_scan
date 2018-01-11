@@ -1,7 +1,9 @@
 {template common/header}
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="source/plugin/data_scan/template/jquery.qrcode.min.js"></script>
+<script src="source/plugin/data_scan/template/jquery-ui.min.js"></script>
 <script>var jq = jQuery.noConflict();</script>
+
 
 <div class="container">
 
@@ -13,6 +15,12 @@
     <span>输入你的学校名：</span>
     <input id="schoolName" type="text" name="name" value="{$name}">
     <input id="cBut" type="submit" value="确认">
+    <!--{if $empty}-->
+    <div class="err">
+        <p>找不到您搜索的结果</p>
+        <p>请输入正确校名</p>
+    </div>
+    <!--{/if}-->
     </form>
 
     <h3>高校前五排名：</h3>
@@ -72,4 +80,16 @@
         text: protocol + "//" + url + "/plugin.php?id=data_scan"
     });
 </script>
+<script>
+ jq(function() {
+   var schoolName = [
+     <!--{loop $schoolName $name}-->
+     "{$name}",
+     <!--{/loop}-->
+   ];
+   jq( "#schoolName" ).autocomplete({
+     source: schoolName
+   });
+ });
+ </script>
 {template common/footer}
