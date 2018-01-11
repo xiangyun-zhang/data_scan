@@ -55,7 +55,9 @@ function getWeixinConfig(){
     $jsapiTicket = getJsApiTicket($acInfo['actn']);
     $noncestr = getNonceStr();
     $timestamp = time();
-    $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $protocol = (!empty($_SERVER[HTTPS]) && $_SERVER[HTTPS] !== off || $_SERVER[SERVER_PORT] == 443) ? "https://" : "http://";
+    $url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+    // $url = "http://www.lystong.cn";
     $data = [
         'noncestr' => $noncestr,
         'jsapi_ticket' => $jsapiTicket,
@@ -118,7 +120,8 @@ function MakeSign($value)
     ksort($value);
     $string = ToUrlParams($value);
     //签名步骤二：MD5加密
-    $string = md5($string);
+    // var_dump($string);
+    $string = sha1($string);
 
     return $string;
 }
