@@ -13,6 +13,8 @@ $schoolScores = getScore();
 $topFive = array_slice($schoolScores, 0, 10);
 $schoolName = array_keys($schoolScores );
 
+$weixinConfig = getWeixinConfig();
+
 if ($subject) {
 	$contents[$subject] = getContents($subject);
 }

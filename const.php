@@ -3,7 +3,7 @@
 define("APPID" , "wxa14a54fa55047558");
 define("APP_SECRET", "7e79e3abbe9ed13c33a3a130a2ddee0c");
 define("TOKEN", "XL0RD85");
-$weixin = [];
+
 $SUBJECT = [
     '0101'  =>  '哲学',
     '0201'  =>  '理论经济学',
