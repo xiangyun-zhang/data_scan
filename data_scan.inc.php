@@ -10,7 +10,7 @@ $name = trim($name);
 
 $contents = [];
 $schoolScores = getScore();
-$topFive = array_slice($schoolScores, 0, 5);
+$topFive = array_slice($schoolScores, 0, 10);
 $schoolName = array_keys($schoolScores );
 
 if ($name) {

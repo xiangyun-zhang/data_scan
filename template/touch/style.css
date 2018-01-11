@@ -2,7 +2,7 @@
 .result td {padding: 5px;}
 .result {margin-bottom: 15px;}
 .schoolSearch {width: 200px;height: 200px;}
-.container #schoolName{display: block; font-size: 20px; height: 50px; width: 200px; text-align: center;}
+.container #schoolName{display: block; font-size: 20px; height: 50px; width: 200px; text-align: center;border: 1px solid black;}
 .container #cBut{display: block; font-size: 20px; width: 100px; margin: 10px auto; top: 10px;}
 .container .sort {font-size: 30px;color: red;}
 .topFive {width: 200px; text-align: center; font-size: 25px;margin-top: 15px;}

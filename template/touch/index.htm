@@ -11,15 +11,14 @@
               <input id="cBut" class="btn btn-default" type="submit" value="确认">
               <!--{if $empty}-->
               <div class="err">
-                  <p>找不到您搜索的结果</p>
-                  <p>请输入正确校名</p>
+                  <p>您输入的学校错误或未上榜</p>
               </div>
               <!--{/if}-->
               </form>
           </div>
 
           <h3>高校前五排名：</h3>
-          <table class="topFive" border="1px">
+          <table class="topFive">
               {eval $i = 1;}
               {loop $topFive $sName $sScore}
               <tr>
@@ -34,7 +33,7 @@
                       {$i}
                       {/if}
                   </td>
-                  <td>$sName</td>
+                  <td><a href="/plugin.php?id=data_scan&name={$sName}">{$sName}</a></td>
                   {eval $i++;}
               </tr>
               {/loop}
@@ -60,23 +59,13 @@
           </table>
 
           <div class="backIndex">
-              <h3>识别二维码</h3>
-              <h3>查询其他学校排名</h3>
+              <a href="/plugin.php?id=data_scan"><h3>重新查询</h3></a>
           </div>
 
           <!--{/if}-->
       </div>
   </div>
 </div>
-<script>
-    var url = window.location.host;
-    var protocol = window.location.protocol;
-    $('.backIndex').qrcode({
-        width: 150,
-        height: 150,
-        text: protocol + "//" + url + "/plugin.php?id=data_scan"
-    });
-</script>
 <script>
  $(function() {
      var schoolName = [
