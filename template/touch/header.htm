@@ -10,11 +10,11 @@
 <script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
 <title>最新高校学科评估查询{eval echo $name ? " - ".$name:''}</title>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="source/plugin/data_scan/template/touch/bootstrap.min.css">
 
 <link rel="stylesheet" href="source/plugin/data_scan/template/touch/style.css">
 <link rel="stylesheet" href="source/plugin/data_scan/template/jquery-ui.min.css">
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="source/plugin/data_scan/template/jquery.min.js"></script>
 <script src="source/plugin/data_scan/template/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <style>
@@ -50,7 +50,7 @@
            title: document.title, // 分享标题
            desc: '查询高校最新的学科排名吧！', // 分享描述
            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-           imgUrl: window.location.protocol+"//"+window.location.host + '/source/plugin/data_scan/template/img/brand.jpg', // 分享图标
+           imgUrl: window.location.protocol+"//"+window.location.host + '/source/plugin/data_scan/template/img/brand.png', // 分享图标
            type: '', // 分享类型,music、video或link，不填默认为link
            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
            success: function () {
@@ -64,7 +64,7 @@
        wx.onMenuShareTimeline({
           title: document.title, // 分享标题
           link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-          imgUrl: window.location.protocol+"//"+window.location.host + '/source/plugin/data_scan/template/img/brand.jpg', // 分享图标
+          imgUrl: window.location.protocol+"//"+window.location.host + '/source/plugin/data_scan/template/img/brand.png', // 分享图标
           success: function () {
          // 用户确认分享后执行的回调函数
           },
