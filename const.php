@@ -3,6 +3,7 @@
 define("APPID" , "wxa14a54fa55047558");
 define("APP_SECRET", "7e79e3abbe9ed13c33a3a130a2ddee0c");
 define("TOKEN", "XL0RD85");
+define("DESC", '快来查询高校学科排名吧！');
 
 $SUBJECT = [
     '0101'  =>  '哲学',

@@ -70,6 +70,7 @@ function getWeixinConfig(){
         'timestamp' => $timestamp,
         'nonceStr' => $noncestr,
         'signature' => $sign,
+        'desc'  => DESC,
     ];
 
     return $weixinConfig;

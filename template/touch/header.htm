@@ -48,7 +48,7 @@
    wx.ready(function(){
        wx.onMenuShareAppMessage({
            title: document.title, // 分享标题
-           desc: '查询高校最新的学科排名吧！', // 分享描述
+           desc: '{$weixinConfig['desc']}', // 分享描述
            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
            imgUrl: window.location.protocol+"//"+window.location.host + '/source/plugin/data_scan/template/img/brand.png', // 分享图标
            type: '', // 分享类型,music、video或link，不填默认为link
